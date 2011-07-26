@@ -1,0 +1,6 @@
+%dl
+  -@db.each_with_index do |entry,idx|
+    %dt= (idx).to_s(36)
+    %dd
+      %a( href="#{entry}" )= entry
+
