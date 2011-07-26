@@ -1,6 +1,16 @@
-%dl
-  -@db.each_with_index do |entry,idx|
-    %dt= (idx).to_s(36)
-    %dd
-      %a( href="#{entry}" )= entry
+%table
+  %thead
+    %tr
+      %th index
+      %th URL
+      %th visits
+  %tbody
+    -@db.each_with_index do |entry,i|
+      -idx = i.to_s(36)
+      -visits = (@stats.include?(idx.to_sym) ? @stats[idx.to_sym] : "0")
+      %tr{ :class => (i.odd? ? "odd" : "") }
+        %td.center= idx
+        %td
+          %a( href="#{entry}" )= entry
+        %td.center= visits
 
