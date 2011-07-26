@@ -1,1 +1,5 @@
-URLSHORTENER
+SWS URL - SocialWebServer URL shortener
+
+A quite simple Sinatra application for shortening urls. It cannot handle users and related stuff, so
+its only usable on a webserver controlled by yourself.
+
