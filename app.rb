@@ -15,5 +15,15 @@ get "/" do
 end
 
 get "/:code" do
+  # aw damn… there is no real point to optimise this
+  idx = params[:code].to_i(36)
+  db = IO.readlines('db')
+  @url = db[idx].strip
+
+  if @url
+    haml :url
+  else
+    status 404
+  end
 end
 

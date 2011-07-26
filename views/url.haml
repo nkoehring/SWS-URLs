@@ -1,0 +1,32 @@
+%h2 You will be redirected to
+%h2
+  %a( href="#{@url}" )= @url
+%h2
+  in
+  %span#timer 5
+  seconds.
+  &nbsp;–&nbsp;
+  %span#stop
+    %a( href="#" onclick="stop()" ) ABORT
+
+:javascript
+  var func, timeout, timeout_cleared = false,
+    timer = document.getElementById("timer"),
+    stop_anchor = document.getElementById("stop"),
+    stop;
+
+  var func = function() {
+    if (!timeout_cleared) {
+      seconds_left = parseInt(timer.innerHTML) - 1;
+      if (seconds_left > 0) { timer.innerHTML = ""+seconds_left; timeout = setTimeout(func, 1000); }
+      else { document.location.href = "#{@url}"; }
+    }
+  }
+
+  var timeout = setTimeout(func, 1000);
+  var stop = function() {
+    timeout_cleared = true;
+    clearTimeout(timeout);
+    stop_anchor.innerHTML = "aborted.";
+  }
+
