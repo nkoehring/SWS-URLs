@@ -7,12 +7,13 @@ unless ARGV.length == 1
 end
 
 URL = ARGV[0].strip
+SHORTY = "http://koehr.in/url/"
 
 # first check, if the link is already there
 i = 0
 File.foreach 'db' do |line|
   if URL == line.strip
-    puts "#{URL} linked at\thttp://url.nkoehring.de/#{i.to_s(36)}"
+    puts "#{URL} linked at\t#{SHORTY}#{i.to_s(36)}"
     exit 0
   end
   i+=1
@@ -22,6 +23,6 @@ end
 db = File.open('db', 'a')
 db.write("#{URL}\n")
 db.close
-puts "#{URL} linked at\thttp://url.nkoehring.de/#{i.to_s(36)}"
+puts "#{URL} linked at\t#{SHORTY}#{i.to_s(36)}"
 exit 0
 
