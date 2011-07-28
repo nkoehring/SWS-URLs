@@ -5,8 +5,8 @@ its only usable on a webserver controlled by yourself.
 
 To add urls quite comfortable, create a litte script like
 
-@#!/bin/sh
-ssh your.server.tld "chdir /path/to/sws/url/ && ./add_link.rb $1"@
+bc. #!/bin/sh
+ssh your.server.tld "chdir /path/to/sws/url/ && ./add_link.rb $1"
 
 For even more convenience (and security!) use certificate (aka key) based ssh login.
 
