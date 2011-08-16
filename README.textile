@@ -10,3 +10,4 @@ ssh your.server.tld "chdir /path/to/sws/url/ && ./add_link.rb $1"
 
 For even more convenience (and security!) use certificate (aka key) based ssh login.
 
+!http://api.flattr.com/button/flattr-badge-large.png(flattr this repo)!:https://flattr.com/submit/auto?user_id=nkoehring&url=https://github.com/nkoehring/SWS-URLs&title=SWS-URLs&language=en_GB&tags=github&category=software 
